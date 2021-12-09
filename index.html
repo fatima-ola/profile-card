@@ -19,24 +19,67 @@
 
     <script type="text/babel">
 
-        // <ProfileCard />
-        // <Avatar />
-        // <UserName />
-        // <SocialLinks />
-        // <Like />
-        // <Share />
-        // <Add />
-  
-        const Hello = () => {
-            return (
-                <div>
-                   <h1>Hello Fatima</h1> 
+        // ProfileCard complex component
+       const ProfileCard = ()=> {
+            return(
+               <div>
+                    <Avatar />
+                    <UserName />
+                    <SocialLinks />
                 </div>
             )
         }
 
+        //  Avatar component
+        const Avatar = () => {
+            return(
+               <img src="https://media-exp1.licdn.com/dms/image/C4D03AQHrcpTaSpN-og/profile-displayphoto-shrink_400_400/0/1606946313491?e=1644451200&v=beta&t=fPfVUDv6KTlkaU6f4mbcN8E3-58zN6sFYyDNsnVjHlU" alt="profile Image"/>
+            )
+        }
+
+        //  UserName component
+        const UserName = () => {
+            return(
+                <h1>Profile Name</h1>
+            )
+        }
+      
+        // SocialLinks component
+        const SocialLinks = () => {
+            return(
+                <div>
+                    <Like />
+                    <Share /> 
+                    <Add /> 
+                </div>
+            )
+        }
+
+        // Like component
+        const Like = () => {
+            return(
+                <div></div>
+            )
+        }
+
+        // Share component
+        const Share = () => {
+            return(
+                <div></div>
+            )
+        }
+
+        // Add component
+        const Add = () => {
+            return(
+                <div></div>
+            )
+        }
+  
+     
+
       ReactDOM.render(
-        <Hello />,
+        <ProfileCard />,
         document.getElementById("app")
       );
   
