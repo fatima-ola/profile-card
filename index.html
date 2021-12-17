@@ -1,116 +1,106 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="app.css">
-    <!-- REACT LIBRARY -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css" />
+  
     <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
-    <!-- REACT DOM LIBRARY -->
+  
     <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
-    <!-- BABEL LIBRARY -->
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <title>Profile Card</title>
-</head>
-<body>
+  </head>
+  <body>
     <div id="app">React has not rendered yet</div>
 
     <script type="text/babel">
-
-        // ProfileCard complex component
-       const ProfileCard = ()=> {
-        let profileCardStyle = {
-            // display: 'flex',
-            // alignItems: 'center',
-            // justifyContent: 'center',
-            height: 300,
-            width: 200,
-            padding: 0,
-            backgroundColor: '#FFF',
-            WebkitFilter: 'drop-shadow(0px 0px 5px #555)',
-            filter: 'drop-shadow(0px 0px 5px #555)'
-        }
-            return(
-               <div style={profileCardStyle}>
-                    <Avatar />
-                    <UserName />
-                    <SocialLinks />
-                </div>
-            )
-        }
-
-        //  Avatar component
-        const Avatar = () => {
-            let avatarStyle = {
-                marginLeft: 20,
-                marginTop: 20,
-                width: 150,
-                height: 150,
-                borderRadius: "50%"
-            }
-            return(
-               <img src="https://media-exp1.licdn.com/dms/image/C4D03AQHrcpTaSpN-og/profile-displayphoto-shrink_400_400/0/1606946313491?e=1644451200&v=beta&t=fPfVUDv6KTlkaU6f4mbcN8E3-58zN6sFYyDNsnVjHlU" alt="profile Image" style={avatarStyle} />
-            )
-        }
-
-        //  UserName component
-        const UserName = () => {
-            let nameStyle = {
-                fontSize: 24,
-                fontFamily: "Arial, Helvetica, sans-serif",
-                margin: 20
-            }
-            return(
-                <h1 style={nameStyle}>Profile Name</h1>
-            )
-        }
-      
-        let iconStyle = {
-            margin: 20
-        }
-        // SocialLinks component
-        const SocialLinks = () => {
-            return(
-                <div>
-                    <Like />
-                    <Share /> 
-                    <Add /> 
-                </div>
-            )
-        }
-
-        // Like component
-        const Like = () => {
-            return(
-                <i className="fa fa-thumbs-o-up" aria-hidden="true" style={iconStyle}></i>
-            )
-        }
-
-        // Share component
-        const Share = () => {
-            return(
-                <i className="fa fa-share" aria-hidden="true" style={iconStyle}></i>
-            )
-        }
-
-        // Add component
-        const Add = () => {
-            return(
-                <i className="fa fa-users" aria-hidden="true" style={iconStyle}></i>
-            )
-        }
-  
      
+      const ProfileCard = () => {
+        let profileCardStyle = {
+          height: 300,
+          width: 200,
+          padding: 0,
+          backgroundColor: "#FFF",
+          WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+          filter: "drop-shadow(0px 0px 5px #555)",
+        };
+        return (
+          <div style={profileCardStyle}>
+            <Avatar />
+            <UserName />
+            <SocialLinks />
+          </div>
+        );
+      };
 
-      ReactDOM.render(
-        <ProfileCard />,
-        document.getElementById("app")
+   
+      const Avatar = () => {
+        let avatarStyle = {
+          marginLeft: 20,
+          marginTop: 20,
+          width: 150,
+          height: 150,
+          borderRadius: "50%",
+        };
+        return (
+          <img
+            src="https://media-exp1.licdn.com/dms/image/C4D03AQHrcpTaSpN-og/profile-displayphoto-shrink_400_400/0/1606946313491?e=1644451200&v=beta&t=fPfVUDv6KTlkaU6f4mbcN8E3-58zN6sFYyDNsnVjHlU"
+            alt="profile Image"
+            style={avatarStyle}
+          />
+        );
+      };
+
+
+      const UserName = () => {
+        let nameStyle = {
+          fontSize: 24,
+          fontFamily: "Arial, Helvetica, sans-serif",
+          margin: 20,
+        };
+        return <h1 style={nameStyle}>Profile Name</h1>;
+      };
+
+      let iconStyle = {
+        margin: 20,
+      };
+    
+      const SocialLinks = () => {
+        return (
+          <div>
+            <Like />
+            <Share />
+            <Add />
+          </div>
+        );
+      };
+
+      const Like = () => (
+        <i
+          className="fa fa-thumbs-o-up"
+          aria-hidden="true"
+          style={iconStyle}
+        ></i>
       );
-  
+
+    
+      const Share = () => (
+        <i className="fa fa-share" aria-hidden="true" style={iconStyle}></i>
+      );
+
+      const Add = () => (
+        <i className="fa fa-users" aria-hidden="true" style={iconStyle}></i>
+      );
+
+      ReactDOM.render(<ProfileCard />, document.getElementById("app"));
     </script>
-  
-</body>
-</html>
+  </body>
+</html> -->
