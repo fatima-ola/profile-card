@@ -1,17 +1,17 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="app.css" />
-  
+    <!-- REACT LIBRARY -->
     <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
-  
+    <!-- REACT DOM LIBRARY -->
     <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
-  
+    <!-- BABEL LIBRARY -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
-  
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -22,9 +22,11 @@
     <div id="app">React has not rendered yet</div>
 
     <script type="text/babel">
-     
-      const ProfileCard = () => {
+      // ProfileCard complex component
+      const ProfileCard = (props) => {
         let profileCardStyle = {
+          display: "inline-block",
+          margin: 20,
           height: 300,
           width: 200,
           padding: 0,
@@ -34,45 +36,47 @@
         };
         return (
           <div style={profileCardStyle}>
-            <Avatar />
-            <UserName />
+            <Avatar img={props.img} />
+            <UserName name={props.name} />
             <SocialLinks />
           </div>
         );
       };
 
-   
-      const Avatar = () => {
+      //  Avatar component
+      const Avatar = (props) => {
         let avatarStyle = {
-          marginLeft: 20,
+          marginLeft: 27,
           marginTop: 20,
           width: 150,
           height: 150,
           borderRadius: "50%",
         };
-        return (
-          <img
-            src="https://media-exp1.licdn.com/dms/image/C4D03AQHrcpTaSpN-og/profile-displayphoto-shrink_400_400/0/1606946313491?e=1644451200&v=beta&t=fPfVUDv6KTlkaU6f4mbcN8E3-58zN6sFYyDNsnVjHlU"
-            alt="profile Image"
-            style={avatarStyle}
-          />
-        );
+        return <img src={props.img} alt="profile Image" style={avatarStyle} />;
       };
 
-
-      const UserName = () => {
+      //  UserName component
+      const UserName = (props) => {
         let nameStyle = {
           fontSize: 24,
+          textAlign: "center",
           fontFamily: "Arial, Helvetica, sans-serif",
           margin: 20,
         };
-        return <h1 style={nameStyle}>Profile Name</h1>;
+        return <h1 style={nameStyle}>{props.name}</h1>;
       };
 
       let iconStyle = {
         margin: 20,
       };
-    
+
+      //GetConnected Complex component
+      function GetConnected() {
+        let getConnectedStyle = {
+          marginLeft: 15,
+        };
+      }
+      // SocialLinks component
       const SocialLinks = () => {
         return (
           <div>
@@ -83,6 +87,7 @@
         );
       };
 
+      // Like component
       const Like = () => (
         <i
           className="fa fa-thumbs-o-up"
@@ -91,16 +96,61 @@
         ></i>
       );
 
-    
+      // Share component
       const Share = () => (
         <i className="fa fa-share" aria-hidden="true" style={iconStyle}></i>
       );
 
+      // Add component
       const Add = () => (
         <i className="fa fa-users" aria-hidden="true" style={iconStyle}></i>
       );
 
-      ReactDOM.render(<ProfileCard />, document.getElementById("app"));
+      ReactDOM.render(
+        <div>
+          <ProfileCard
+            name="Fatima"
+            img="https://media-exp1.licdn.com/dms/image/C4D03AQHrcpTaSpN-og/profile-displayphoto-shrink_400_400/0/1606946313491?e=1644451200&v=beta&t=fPfVUDv6KTlkaU6f4mbcN8E3-58zN6sFYyDNsnVjHlU"
+          />
+          <ProfileCard
+            name="Andrea"
+            img="https://images.pexels.com/photos/3777952/pexels-photo-3777952.jpeg?auto=compress&cs=tinysrgb&dpr=2"
+          />
+          <ProfileCard
+            name="Ciaque"
+            img="https://images.pexels.com/photos/1975342/pexels-photo-1975342.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+          />
+          <ProfileCard
+            name="Spenser"
+            img="https://images.pexels.com/photos/428333/pexels-photo-428333.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+          />
+          <ProfileCard
+            name="Mikhail"
+            img="https://images.pexels.com/photos/8455302/pexels-photo-8455302.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+          />
+          <ProfileCard
+            name="Reem"
+            img="https://images.pexels.com/photos/10485989/pexels-photo-10485989.jpeg?auto=compress&cs=tinysrgb&dpr=2"
+          />
+          <ProfileCard
+            name="Brenner"
+            img="https://images.pexels.com/photos/10495158/pexels-photo-10495158.jpeg?auto=compress&cs=tinysrgb&dpr=2"
+          />
+          <ProfileCard
+            name="Modo"
+            img="https://images.pexels.com/photos/3474629/pexels-photo-3474629.jpeg?auto=compress&cs=tinysrgb&dpr=2"
+          />
+          <ProfileCard
+            name="Ketut"
+            img="https://images.pexels.com/photos/4584552/pexels-photo-4584552.jpeg?auto=compress&cs=tinysrgb&dpr=2"
+          />
+          <ProfileCard
+            name="Shalom"
+            img="https://images.pexels.com/photos/4458627/pexels-photo-4458627.jpeg?auto=compress&cs=tinysrgb&dpr=2"
+          />
+        </div>,
+        document.getElementById("app")
+      );
     </script>
   </body>
-</html> -->
+</html>
