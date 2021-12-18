@@ -22,29 +22,92 @@
     <div id="app">React has not rendered yet</div>
 
     <script type="text/babel">
-      // ProfileCard complex component
-      const ProfileCard = (props) => {
-        let peopleProfile = props.peoples.map((people) => {
-          let profileCardStyle = {
-            display: "inline-block",
-            margin: 20,
-            height: 300,
-            width: 200,
-            padding: 0,
-            backgroundColor: "#FFF",
-            WebkitFilter: "drop-shadow(0px 0px 5px #555)",
-            filter: "drop-shadow(0px 0px 5px #555)",
-          };
-          return (
-            <div style={profileCardStyle} key={people.id}>
-              <Avatar img={people.img} />
-              <UserName name={people.name} />
-              <SocialLinks />
-            </div>
-          );
-        });
+      // All ProfileCard
 
-        return <div>{peopleProfile}</div>;
+      // const ProfileCard = (props) => {
+      //   let peopleProfile = props.peoples.map((people) => {
+      //     let profileCardStyle = {
+      //       display: "inline-block",
+      //       margin: 20,
+      //       height: 300,
+      //       width: 200,
+      //       padding: 0,
+      //       backgroundColor: "#FFF",
+      //       WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+      //       filter: "drop-shadow(0px 0px 5px #555)",
+      //     };
+      //     return (
+      //       <div style={profileCardStyle} key={people.id}>
+      //         <Avatar img={people.img} />
+      //         <UserName name={people.name} />
+      //         <SocialLinks />
+      //       </div>
+      //     );
+      //   });
+
+      //   return <div>{peopleProfile}</div>;
+      // };
+
+      //All males
+      const ProfileCard = (props) => {
+        let maleProfile = props.peoples
+          .filter((people) => {
+            return people.gender === "male";
+          })
+          .map((people) => {
+            let profileCardStyle = {
+              display: "inline-block",
+              margin: 20,
+              height: 300,
+              width: 200,
+              padding: 0,
+              backgroundColor: "#FFF",
+              WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+              filter: "drop-shadow(0px 0px 5px #555)",
+            };
+            return (
+              <div style={profileCardStyle} key={people.id}>
+                <Avatar img={people.img} />
+                <UserName name={people.name} />
+                <SocialLinks />
+              </div>
+            );
+          });
+
+        //All Female Profile cards
+        let femaleProfile = props.peoples
+          .filter((people) => {
+            return people.gender === "Female";
+          })
+          .map((people) => {
+            let profileCardStyle = {
+              display: "inline-block",
+              margin: 20,
+              height: 300,
+              width: 200,
+              padding: 0,
+              backgroundColor: "#FFF",
+              WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+              filter: "drop-shadow(0px 0px 5px #555)",
+            };
+            return (
+              <div style={profileCardStyle} key={people.id}>
+                <Avatar img={people.img} />
+                <UserName name={people.name} />
+                <SocialLinks />
+              </div>
+            );
+          });
+
+        return (
+          <div>
+            <h1>Males</h1>
+            <div>{maleProfile}</div>
+            <hr />
+            <h1>Females</h1>
+            <div>{femaleProfile}</div>
+          </div>
+        );
       };
 
       //  Avatar component
@@ -112,53 +175,63 @@
 
       let peoples = [
         {
-          id: 1,
+          id: 0,
           name: "Fatima",
+          gender: "Female",
           img: "https://media-exp1.licdn.com/dms/image/C4D03AQHrcpTaSpN-og/profile-displayphoto-shrink_400_400/0/1606946313491?e=1644451200&v=beta&t=fPfVUDv6KTlkaU6f4mbcN8E3-58zN6sFYyDNsnVjHlU",
         },
         {
-          id: 2,
+          id: 1,
           name: "Ciaque",
+          gender: "Female",
           img: "https://images.pexels.com/photos/1975342/pexels-photo-1975342.jpeg",
         },
         {
-          id: 3,
+          id: 2,
           name: "Andrea",
+          gender: "male",
           img: "https://images.pexels.com/photos/3777952/pexels-photo-3777952.jpeg",
         },
         {
-          id: 4,
+          id: 3,
           name: "Spenser",
+          gender: "male",
           img: "https://images.pexels.com/photos/428333/pexels-photo-428333.jpeg",
         },
         {
-          id: 5,
+          id: 4,
           name: "Mikhail",
+          gender: "male",
           img: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg",
         },
         {
-          id: 6,
+          id: 5,
           name: "Reem",
+          gender: "Female",
           img: "https://images.pexels.com/photos/10485989/pexels-photo-10485989.jpeg",
         },
         {
-          id: 7,
+          id: 6,
           name: "Brenner",
+          gender: "male",
           img: "https://images.pexels.com/photos/10495158/pexels-photo-10495158.jpeg",
         },
         {
-          id: 8,
+          id: 7,
           name: "Modo",
+          gender: "male",
           img: "https://images.pexels.com/photos/3474629/pexels-photo-3474629.jpeg",
         },
         {
-          id: 9,
+          id: 8,
           name: "Ketut",
+          gender: "Female",
           img: "https://images.pexels.com/photos/4584552/pexels-photo-4584552.jpeg",
         },
         {
-          id: 10,
+          id: 9,
           name: "Shalom",
+          gender: "Female",
           img: "https://images.pexels.com/photos/4458627/pexels-photo-4458627.jpeg",
         },
       ];
