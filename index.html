@@ -24,23 +24,27 @@
     <script type="text/babel">
       // ProfileCard complex component
       const ProfileCard = (props) => {
-        let profileCardStyle = {
-          display: "inline-block",
-          margin: 20,
-          height: 300,
-          width: 200,
-          padding: 0,
-          backgroundColor: "#FFF",
-          WebkitFilter: "drop-shadow(0px 0px 5px #555)",
-          filter: "drop-shadow(0px 0px 5px #555)",
-        };
-        return (
-          <div style={profileCardStyle}>
-            <Avatar img={props.img} />
-            <UserName name={props.name} />
-            <SocialLinks />
-          </div>
-        );
+        let peopleProfile = props.peoples.map((people) => {
+          let profileCardStyle = {
+            display: "inline-block",
+            margin: 20,
+            height: 300,
+            width: 200,
+            padding: 0,
+            backgroundColor: "#FFF",
+            WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+            filter: "drop-shadow(0px 0px 5px #555)",
+          };
+          return (
+            <div style={profileCardStyle} key={people.id}>
+              <Avatar img={people.img} />
+              <UserName name={people.name} />
+              <SocialLinks />
+            </div>
+          );
+        });
+
+        return <div>{peopleProfile}</div>;
       };
 
       //  Avatar component
@@ -106,49 +110,61 @@
         <i className="fa fa-users" aria-hidden="true" style={iconStyle}></i>
       );
 
+      let peoples = [
+        {
+          id: 1,
+          name: "Fatima",
+          img: "https://media-exp1.licdn.com/dms/image/C4D03AQHrcpTaSpN-og/profile-displayphoto-shrink_400_400/0/1606946313491?e=1644451200&v=beta&t=fPfVUDv6KTlkaU6f4mbcN8E3-58zN6sFYyDNsnVjHlU",
+        },
+        {
+          id: 2,
+          name: "Ciaque",
+          img: "https://images.pexels.com/photos/1975342/pexels-photo-1975342.jpeg",
+        },
+        {
+          id: 3,
+          name: "Andrea",
+          img: "https://images.pexels.com/photos/3777952/pexels-photo-3777952.jpeg",
+        },
+        {
+          id: 4,
+          name: "Spenser",
+          img: "https://images.pexels.com/photos/428333/pexels-photo-428333.jpeg",
+        },
+        {
+          id: 5,
+          name: "Mikhail",
+          img: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg",
+        },
+        {
+          id: 6,
+          name: "Reem",
+          img: "https://images.pexels.com/photos/10485989/pexels-photo-10485989.jpeg",
+        },
+        {
+          id: 7,
+          name: "Brenner",
+          img: "https://images.pexels.com/photos/10495158/pexels-photo-10495158.jpeg",
+        },
+        {
+          id: 8,
+          name: "Modo",
+          img: "https://images.pexels.com/photos/3474629/pexels-photo-3474629.jpeg",
+        },
+        {
+          id: 9,
+          name: "Ketut",
+          img: "https://images.pexels.com/photos/4584552/pexels-photo-4584552.jpeg",
+        },
+        {
+          id: 10,
+          name: "Shalom",
+          img: "https://images.pexels.com/photos/4458627/pexels-photo-4458627.jpeg",
+        },
+      ];
+
       ReactDOM.render(
-        <div>
-          <ProfileCard
-            name="Fatima"
-            img="https://media-exp1.licdn.com/dms/image/C4D03AQHrcpTaSpN-og/profile-displayphoto-shrink_400_400/0/1606946313491?e=1644451200&v=beta&t=fPfVUDv6KTlkaU6f4mbcN8E3-58zN6sFYyDNsnVjHlU"
-          />
-          <ProfileCard
-            name="Andrea"
-            img="https://images.pexels.com/photos/3777952/pexels-photo-3777952.jpeg?auto=compress&cs=tinysrgb&dpr=2"
-          />
-          <ProfileCard
-            name="Ciaque"
-            img="https://images.pexels.com/photos/1975342/pexels-photo-1975342.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-          />
-          <ProfileCard
-            name="Spenser"
-            img="https://images.pexels.com/photos/428333/pexels-photo-428333.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-          />
-          <ProfileCard
-            name="Mikhail"
-            img="https://images.pexels.com/photos/8455302/pexels-photo-8455302.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-          />
-          <ProfileCard
-            name="Reem"
-            img="https://images.pexels.com/photos/10485989/pexels-photo-10485989.jpeg?auto=compress&cs=tinysrgb&dpr=2"
-          />
-          <ProfileCard
-            name="Brenner"
-            img="https://images.pexels.com/photos/10495158/pexels-photo-10495158.jpeg?auto=compress&cs=tinysrgb&dpr=2"
-          />
-          <ProfileCard
-            name="Modo"
-            img="https://images.pexels.com/photos/3474629/pexels-photo-3474629.jpeg?auto=compress&cs=tinysrgb&dpr=2"
-          />
-          <ProfileCard
-            name="Ketut"
-            img="https://images.pexels.com/photos/4584552/pexels-photo-4584552.jpeg?auto=compress&cs=tinysrgb&dpr=2"
-          />
-          <ProfileCard
-            name="Shalom"
-            img="https://images.pexels.com/photos/4458627/pexels-photo-4458627.jpeg?auto=compress&cs=tinysrgb&dpr=2"
-          />
-        </div>,
+        <ProfileCard peoples={peoples} />,
         document.getElementById("app")
       );
     </script>
